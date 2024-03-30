@@ -1,9 +1,19 @@
-import "./Greetings.css";
+import styles from "./Greetings.module.css";
+
+// This issue can be resolved using css modules
+// Then one won't have the headache of observing class name colisions or 
+// imports order
+
+// so we use css modules to handle this headache
+
+// Note: CSS Modules ka ONLY fyda : Ye name collisions nahi hone deti
+// Humme pata hain ki ye wahi class apply karegi jo class hum apply karna chahte hain koi dusri nahi
 
 function Greetings() {
   const isDarkMode = false;
   return (
-    <div className={`container ${isDarkMode ? "bg-dark" : ""}`}>
+    // <div className={styles[`${isDarkMode ? `bg-dark` : ""}`]}>
+    <div className={`${styles.container} ${styles["bg-dark"]}`}>
       <h1>Hello, dibya</h1>
       <p>
         Lorem, ipsum dolor sit amet consectetur adipisicing elit. Itaque,
